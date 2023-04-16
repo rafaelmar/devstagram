@@ -1,6 +1,6 @@
-<IfModule mod_rewrite.c>
+DirectoryIndex index.php
+
+
 RewriteEngine On
-RewriteBase /
-RewriteCond %{REQUEST_URI} !/public
-RewriteRule ^(.*)$ public/$1
-</IfModule>
+RewriteRule ^$ public/index.php [L]
+RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
